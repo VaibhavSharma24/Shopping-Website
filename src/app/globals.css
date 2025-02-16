@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 230 35% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 229 31% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 229 31% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 267 100% 70%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 229 31% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 229 31% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 267 100% 70%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 229 31% 15%;
+    --input: 229 31% 15%;
+    --ring: 267 100% 70%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-orange-300;
+}
+
+.glow {
+  box-shadow: 0 0 20px theme("colors.purple.500" / 20%);
+}
+
+.animate-in {
+  animation: animateIn 0.3s ease-in-out;
+}
+
+@keyframes animateIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#react-query-devtools {
+  display: none !important;
+}
+
